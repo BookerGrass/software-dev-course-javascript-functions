@@ -33,6 +33,7 @@ This activity reinforces:
 // ============================================
 
 // Script 1 - Greeting multiple users
+
 console.log("Welcome, Alice!");
 console.log("Welcome, Bob!");
 console.log("Welcome, Charlie!");
@@ -72,3 +73,30 @@ for (let i = 0; i < names.length; i++) {
 */
 
 // ✅ Your refactored code goes below this line!
+
+function greet(name){
+   console.log("Welcome, " + name + "!");
+}
+greet("Alice")
+greet("Bob")
+greet("Charlie")
+
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
+let result = addNumbers(5, 10);
+console.log("The sum of " + num1 + " and " + num2 + " is " + result)
+
+function multNumber(num1, num2){
+   return num1 * num2;
+}
+let multResult = multNumber(5, 10)
+console.log("The product of " + num1 + " and " + num2 + " is " + multResult)
+
+function printNames(array){
+   for (let i = 0; i < array.length; i++){
+      console.log(array[i]);
+   }
+}
+printNames(["Alice", "Bob", "Charlie"])
+
