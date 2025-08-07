@@ -36,6 +36,24 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. Capitalize the role if needed.
 // 4. Return the result.
 
+function capaitalize(word){
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+function formatString(name, role){
+    return (`Name: ${name}, Role: ${role}`);
+}
+
+function createBadge(name, role){
+    let capitalRole = capaitalize(role);
+    return formatString(name, capitalRole)
+}
+
+console.log(createBadge("Booker", "student"));
+
+
+
+
 
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
@@ -51,6 +69,31 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
 
+function calculateBaseCost(attendees, costPerAttendee ){
+    return attendees * costPerAttendee;
+}
+
+function isEligableForDiscount(attendees){
+    return (attendees > 100);
+}
+
+function applyDiscount(baseCost){
+    return (baseCost * 0.9);
+}
+
+function calculateEventCost(attendees, costPerAttendee){
+    let baseCost = calculateBaseCost(attendees, costPerAttendee);
+    if (isEligableForDiscount(attendees)){
+        return applyDiscount(baseCost)
+    }
+    return baseCost;
+}
+
+console.log(calculateEventCost(80, 50));
+console.log(calculateEventCost(100, 50));
+console.log(calculateEventCost(200, 50));
+
+
 
 // ============================================
 // 🧩 Task 3: Validate Email
@@ -63,6 +106,14 @@ reusable functions that solve specific tasks. This activity encourages:
 // Steps:
 // 1. Check if the string includes both "@" and ".".
 // 2. Return true or false accordingly.
+
+function isValidEmail(email){
+    return email.includes("@") && email.includes(".");
+}
+
+console.log(isValidEmail("student@email.com"));
+console.log(isValidEmail("kjl;ashdflkjasdh"));
+
 
 
 // ============================================
